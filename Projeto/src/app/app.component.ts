@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
       icon: 'paper-plane'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
