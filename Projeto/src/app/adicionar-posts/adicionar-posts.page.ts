@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { post } from '../models/posts.model';
+import { PostsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-adicionar-posts',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdicionarPostsPage implements OnInit {
 
-  constructor() { }
+  post = {} as post;
+
+  constructor(private postService: PostsService) { }
 
   ngOnInit() {
+  }
+
+  postar(){
+    console.log(this.post);
+    this.postService.post(this.post);
   }
 
 }

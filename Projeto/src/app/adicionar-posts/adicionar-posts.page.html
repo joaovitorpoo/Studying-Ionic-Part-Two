@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>adicionarPosts</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Adicionar Post</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form (ngSubmit)="postar()">
+    <ion-item>
+      <ion-label>User Id</ion-label>
+      <ion-input type="number" [(ngModel)]="post.userId" name="userId"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Id</ion-label>
+      <ion-input type="number" [(ngModel)]="post.id" name="id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input type="text" [(ngModel)]="post.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Body</ion-label>
+      <ion-textarea [(ngModel)]="post.body" name="body"></ion-textarea>
+    </ion-item>
+    <ion-button expand="full" type="submit" color="secondary">Postar</ion-button>
+  </form>
 </ion-content>
